@@ -31,9 +31,10 @@ Primary key(numerical IDs): A column that uniquely identifies the rows in a tabl
 Here's just a sampling of the many data types that SQL supports.
 
 #### Text and string types
-text — a string of any length, like Python `str` or unicode types.
-char(n) — a string of exactly n characters.
-varchar(n) — a string of up to n characters.
+
+**text** — a string of any length, like Python `str` or unicode types.
+**char(n)** — a string of exactly n characters.
+**varchar(n)** — a string of up to n characters.
 
 #### Numeric types
 integer — an integer value, like Python `int`.
