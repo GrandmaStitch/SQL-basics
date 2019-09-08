@@ -32,7 +32,7 @@ Here's just a sampling of the many data types that SQL supports.
 
 #### Text and string types
 
-**text** — a string of any length, like Python `str` or unicode types.\s\s
+**text** — a string of any length, like Python `str` or unicode types.<br />
 **char(n)** — a string of exactly n characters.
 **varchar(n)** — a string of up to n characters.
 
