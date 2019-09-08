@@ -33,19 +33,19 @@ Here's just a sampling of the many data types that SQL supports.
 #### Text and string types
 
 **text** — a string of any length, like Python `str` or unicode types.<br />
-**char(n)** — a string of exactly n characters.
-**varchar(n)** — a string of up to n characters.
+**char(n)** — a string of exactly n characters.<br />
+**varchar(n)** — a string of up to n characters.<br />
 
 #### Numeric types
-integer — an integer value, like Python `int`.
-real — a floating-point value, like Python `float`. Accurate up to six decimal places.
-double precision — a higher-precision floating-point value. Accurate up to 15 decimal places.
-decimal — an exact decimal value.
+integer — an integer value, like Python `int`.<br />
+real — a floating-point value, like Python `float`. Accurate up to six decimal places.<br />
+double precision — a higher-precision floating-point value. Accurate up to 15 decimal places.<br />
+decimal — an exact decimal value.<br />
 
 #### Date and time types
-date — a calendar date; including year, month, and day.
-time — a time of day.
-timestamp — a date and time together.
+date — a calendar date; including year, month, and day.<br />
+time — a time of day.<br />
+timestamp — a date and time together.<br />
 
 *Remember*: In SQL, we always put string and date values inside single quotes.
 
