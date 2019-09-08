@@ -8,6 +8,8 @@
   | - data structures: lists, dictionaries, objects | - databases: key-value store, navigational DB, relational DB |
   | EPHEMERAL, TEMPORARY | PERSISTENT, DURABLE |
 
+&nbsp;
+
 ### Aggregations
 
 > Aggregation is to compute a single value from a set of values.
@@ -20,9 +22,13 @@
   | What's the least? | min |
   | What's the sum? | sum |
 
+&nbsp;
+
 ### Uniqueness and keys
 
 Primary key(numerical IDs): A column that uniquely identifies the rows in a table.
+
+&nbsp;
 
 ### SQL data types
 
@@ -34,38 +40,41 @@ Here's just a sampling of the many data types that SQL supports.
 
 **text** — a string of any length, like Python `str` or unicode types.<br />
 **char(n)** — a string of exactly n characters.<br />
-**varchar(n)** — a string of up to n characters.<br />
+**varchar(n)** — a string of up to n characters.
 
 #### Numeric types
-integer — an integer value, like Python `int`.<br />
-real — a floating-point value, like Python `float`. Accurate up to six decimal places.<br />
-double precision — a higher-precision floating-point value. Accurate up to 15 decimal places.<br />
-decimal — an exact decimal value.<br />
+**integer** — an integer value, like Python `int`.<br />
+**real** — a floating-point value, like Python `float`. Accurate up to six decimal places.<br />
+**double precision** — a higher-precision floating-point value. Accurate up to 15 decimal places.<br />
+**decimal** — an exact decimal value.
 
 #### Date and time types
-date — a calendar date; including year, month, and day.<br />
-time — a time of day.<br />
-timestamp — a date and time together.<br />
+**date** — a calendar date; including year, month, and day.<br />
+**time** — a time of day.<br />
+**timestamp** — a date and time together.
 
 *Remember*: In SQL, we always put string and date values inside single quotes.
 
+&nbsp;
 
 ## Database Manipulations
 
 ### Select clauses
 
-... limit count
+... limit count<br />
 Return just the first count rows of the result table.
 
-... limit count offset skip
+... limit count offset skip<br />
 Return count rows starting after the first skip rows.
 
-... order by columns
-... order by columns desc
+... order by columns<br />
+... order by columns desc<br />
 Sort the rows using the columns (one or more, separated by commas) as the sort key. Numerical columns will be sorted in numerical order; string columns in alphabetical order. With desc, the order is reversed (desc-ending order).
 
-... group by columns
+... group by columns<br />
 Change the behavior of aggregations such as max, count, and sum. With group by, the aggregation will return one row for each distinct value in columns.
+
+&nbsp;
 
 ### Other clauses
 
@@ -97,6 +106,8 @@ having total > 500 ;
 ```
 Usually, at least one of the columns will be an aggregate function such as count, max, or sum on one of the tables' columns. In order to apply having to an aggregated column, you'll want to give it a name using **as**.
 
+&nbsp;
+
 ### Insert statement
 
 The basic syntax for the insert statement:
@@ -113,6 +124,8 @@ insert into table values ( val1, val2, ... );
 For instance, if a table has three columns (a, b, c) and you want to insert into a and b, you can leave off the column names from the insert statement. But if you want to insert into b and c, or a and c, you have to specify the columns.
 
 A single insert statement can only insert into a single table. (Contrast this with the select statement, which can pull data from several tables using a join.)
+
+&nbsp;
 
 ### Join syntax
 
