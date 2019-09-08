@@ -75,7 +75,7 @@ The **where** clause expresses restrictions — filtering a table for rows that 
 - **where name >= 'George'** — return only rows where the name column is alphabetically after 'George'.
 - **where species != 'gorilla' and name != 'George'** — return only rows where species isn't 'gorilla' and name isn't 'George'.
 
-... group by<br />
+**group by**<br />
 The **group by** clause is **only used with aggregations**, such as max or sum. Without a group by clause, a select statement with an aggregation will aggregate over the whole selected table(s), returning only one row. With a group by clause, it will return one row for each distinct value of the column or expression in the group by clause.
 
 **having**<br />
