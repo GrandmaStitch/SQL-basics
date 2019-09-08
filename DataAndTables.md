@@ -8,7 +8,6 @@
   | - data structures: lists, dictionaries, objects | - databases: key-value store, navigational DB, relational DB |
   | EPHEMERAL, TEMPORARY | PERSISTENT, DURABLE |
 
-&nbsp;
 
 ### Aggregations
 
@@ -22,13 +21,11 @@
   | What's the least? | min |
   | What's the sum? | sum |
 
-&nbsp;
 
 ### Uniqueness and keys
 
 Primary key(numerical IDs): A column that uniquely identifies the rows in a table.
 
-&nbsp;
 
 ### SQL data types
 
@@ -55,7 +52,6 @@ Here's just a sampling of the many data types that SQL supports.
 
 *Remember*: In SQL, we always put string and date values inside single quotes.
 
-&nbsp;
 
 ## Database Manipulations
 
@@ -74,7 +70,6 @@ Sort the rows using the columns (one or more, separated by commas) as the sort k
 ... group by columns<br />
 Change the behavior of aggregations such as max, count, and sum. With group by, the aggregation will return one row for each distinct value in columns.
 
-&nbsp;
 
 ### Other clauses
 
@@ -106,7 +101,6 @@ having total > 500 ;
 ```
 Usually, at least one of the columns will be an aggregate function such as count, max, or sum on one of the tables' columns. In order to apply having to an aggregated column, you'll want to give it a name using **as**.
 
-&nbsp;
 
 ### Insert statement
 
@@ -125,7 +119,6 @@ For instance, if a table has three columns (a, b, c) and you want to insert into
 
 A single insert statement can only insert into a single table. (Contrast this with the select statement, which can pull data from several tables using a join.)
 
-&nbsp;
 
 ### Join syntax
 
