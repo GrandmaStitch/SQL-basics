@@ -55,7 +55,7 @@ Here's just a sampling of the many data types that SQL supports.
 
 ## Database Manipulations
 
-### Select clauses
+### Select statement
 
 ... **limit** count<br />
 Return just the first count rows of the result table.
@@ -69,7 +69,7 @@ The **order by** clause tells the database how to *sort the results* — usually
 Ordering happens before limit/offset, so you can use them together to extract pages of alphabetized results. (Think of the pages of a dictionary.)
 The optional **desc** modifier tells the database to order results in descending order — for instance from large numbers to small ones, or from Z to A.
 
-... **where**<br />
+... **where** conditions<br />
 The **where** clause expresses restrictions — filtering a table for rows that follow a particular rule. **where** supports equalities, inequalities, and boolean operators (among other things):
 - **where species = 'gorilla'** — return only rows that have 'gorilla' as the value of the species column.
 - **where name >= 'George'** — return only rows where the name column is alphabetically after 'George'.
@@ -78,7 +78,7 @@ The **where** clause expresses restrictions — filtering a table for rows that 
 ... group by<br />
 The **group by** clause is **only used with aggregations**, such as max or sum. Without a group by clause, a select statement with an aggregation will aggregate over the whole selected table(s), returning only one row. With a group by clause, it will return one row for each distinct value of the column or expression in the group by clause.
 
-**having**
+**having**<br />
 The **having** clause works like the where clause, but it applies after group by aggregations take place. Here's an example:
 ```sql
 select col1, sum(col2) as total
