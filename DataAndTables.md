@@ -57,41 +57,28 @@ Here's just a sampling of the many data types that SQL supports.
 
 ### Select clauses
 
-... limit count<br />
+... **limit** count<br />
 Return just the first count rows of the result table.
 
-... limit count offset skip<br />
-Return count rows starting after the first skip rows.
+... **limit** count **offset** skip<br />
+Return count rows starting after the first skip rows. The optional **offset** clause says how far to skip ahead into the results. So limit 10 offset 100 will return 10 results starting with the 101st.
 
-... order by columns<br />
-... order by columns desc<br />
-Sort the rows using the columns (one or more, separated by commas) as the sort key. Numerical columns will be sorted in numerical order; string columns in alphabetical order. With desc, the order is reversed (desc-ending order).
+... **order by** columns<br />
+... **order by** columns **desc**<br />
+The **order by** clause tells the database how to *sort the results* — usually according to one or more columns.
+Ordering happens before limit/offset, so you can use them together to extract pages of alphabetized results. (Think of the pages of a dictionary.)
+The optional **desc** modifier tells the database to order results in descending order — for instance from large numbers to small ones, or from Z to A.
 
-... group by columns<br />
-Change the behavior of aggregations such as max, count, and sum. With group by, the aggregation will return one row for each distinct value in columns.
-
-
-### Other clauses
-
-#### where
+... **where**<br />
 The **where** clause expresses restrictions — filtering a table for rows that follow a particular rule. **where** supports equalities, inequalities, and boolean operators (among other things):
 - **where species = 'gorilla'** — return only rows that have 'gorilla' as the value of the species column.
 - **where name >= 'George'** — return only rows where the name column is alphabetically after 'George'.
 - **where species != 'gorilla' and name != 'George'** — return only rows where species isn't 'gorilla' and name isn't 'George'.
 
-#### limit / offset
-The **limit** clause sets a limit on how many rows to return in the result table. The optional **offset** clause says how far to skip ahead into the results. So limit 10 offset 100 will return 10 results starting with the 101st.
-
-#### order by
-The **order by** clause tells the database how to sort the results — usually according to one or more columns.
-Ordering happens before limit/offset, so you can use them together to extract pages of alphabetized results. (Think of the pages of a dictionary.)
-
-The optional **desc** modifier tells the database to order results in descending order — for instance from large numbers to small ones, or from Z to A.
-
-#### group by
+... group by<br />
 The **group by** clause is **only used with aggregations**, such as max or sum. Without a group by clause, a select statement with an aggregation will aggregate over the whole selected table(s), returning only one row. With a group by clause, it will return one row for each distinct value of the column or expression in the group by clause.
 
-#### having
+**having**
 The **having** clause works like the where clause, but it applies after group by aggregations take place. Here's an example:
 ```sql
 select col1, sum(col2) as total
