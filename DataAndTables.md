@@ -154,6 +154,8 @@ select * from posts where content = 'cheers!';
 delete from posts where content = 'cheers!';
 ```
 
+## Example Code
+
 -- select max(name) from animals;
 
 -- select * from animals limit 10;
