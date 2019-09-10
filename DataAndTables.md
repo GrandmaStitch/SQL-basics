@@ -1,4 +1,4 @@
-## what's a database?
+## What's a database?
 
 ### How do we structure application data
 
@@ -8,6 +8,7 @@
   | - data structures: lists, dictionaries, objects | - databases: key-value store, navigational DB, relational DB |
   | EPHEMERAL, TEMPORARY | PERSISTENT, DURABLE |
 
+![sqlDifference](imgs/sqlDifference.png)
 
 ### Aggregations
 
@@ -57,11 +58,16 @@ Here's just a sampling of the many data types that SQL supports.
 
 ### Select statement
 
+![selectStatement](imgs/selectStatement.png)
+![selectStatement1](imgs/selectStatement1.png)
+
 ... **limit** count<br />
 Return just the first count rows of the result table.
 
 ... **limit** count **offset** skip<br />
 Return count rows starting after the first skip rows. The optional **offset** clause says how far to skip ahead into the results. So limit 10 offset 100 will return 10 results starting with the 101st.
+
+![otherClause](imgs/otherClause.png)
 
 ... **order by** columns<br />
 ... **order by** columns **desc**<br />
@@ -122,3 +128,61 @@ select T.thing, S.stuff
 from T, S
 where T.target = S.match;
 ```
+
+### Update statement
+
+Syntax: **update** table **set** column = value **where** restriction ;
+
+> The restriction works the same as in **select** and supports the same set of operators on column values.
+
+The **like** operator supports a simple form of text pattern-matching. Whatever is on the left side of the operator (usually the name of a text column) will be matched against the pattern on the right. The pattern is an SQL text string (so it's in '**single quotes**') and can use the **%** sign to match any sub-string, including the empty string.
+If you are familiar with regular expressions, think of the **%** in **like** patterns as being like the regex **.*** (dot star).
+If you are more familiar with filename patterns in the Unix shell or Windows command prompt, % here is a lot like * (star) in those systems.
+
+```sql
+update posts set content = 'cheers!' where content like '%spam%';
+```
+
+### Delete statement
+
+Syntax: **delete from** table **where** restriction ;
+
+> The restriction works the same way as in select, with the same set of operators allowed.
+
+```sql
+select * from posts where content = 'cheers!';
+delete from posts where content = 'cheers!';
+```
+
+-- select max(name) from animals;
+
+-- select * from animals limit 10;
+
+-- select * from animals where species = 'orangutan' order by birthdate;
+
+-- select * from animals where species = 'orangutan' order by birthdate desc;
+
+-- select name, birthdate from animals order by name limit 10 offset 20;
+
+-- select species, min(birthdate) from animals group by species;
+
+-- select name, count(\*) as num from animals
+-- group by name
+-- order by num desc
+-- limit 5;
+
+```sql
+select diet.food, count(animals.name) as num
+from animals, diet
+where animals.species = diet.species
+group by diet.food having num = 1;
+```
+
+```sql
+select ordernames.name, count(animals.species) as num
+from animals, taxonomy, ordernames
+where animals.species = taxonomy.name and taxonomy.t_order = ordernames.t_order
+group by ordernames.name
+order by num desc;
+```
+
