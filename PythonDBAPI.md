@@ -112,8 +112,11 @@ setTimeout(function() {
 solution: use [bleach](https://bleach.readthedocs.io/en/latest/) to escape script injection.
 
 ## References
+
 [PostgreSQL documentation](https://www.postgresql.org/docs/9.6/app-psql.html)
+
 https://xkcd.com/327/
+
 https://bobby-tables.com
 
 ## Python packages
