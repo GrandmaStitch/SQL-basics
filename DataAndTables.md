@@ -168,10 +168,6 @@ delete from posts where content = 'cheers!';
 
 -- select species, min(birthdate) from animals group by species;
 
--- select name, count(\*) as num from animals
--- group by name
--- order by num desc
--- limit 5;
 
 ```sql
 select diet.food, count(animals.name) as num
